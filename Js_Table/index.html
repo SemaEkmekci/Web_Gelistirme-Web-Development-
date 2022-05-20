@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="bootstrap.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <!-- <script src="bootstrap.js"></script> -->
+    <title>DataTable</title>
+
+  </head>
+  <body id="body_kısmı">
+    <div>
+      <form>
+        <div class="input-group">
+            <input class="input-box"
+              type="text"
+              id="isim_bilgisi_ekle"
+              placeholder="İsim"
+              required
+            />
+            <input class="input-box"
+              type="text"
+              id="soyisim_bilgisi_ekle"
+              placeholder="Soyisim"
+              required
+            />
+          
+            <input class="input-box"
+              type="text" maxlength="10"
+              id="telefon_bilgisi_ekle"
+              placeholder="Telefon"
+              required
+            />
+          
+         
+            <input class="input-box"
+              type="email"
+              id="mail_bilgisi_ekle"
+              placeholder="E-mail"
+              required
+            />
+         
+            <input class="input-box"
+              type="date"
+              id="dy_bilgisi_ekle"
+              placeholder="Doğum Yılı"
+              pattern="\d*"
+              required
+            />
+            <button type="submit" class="input-group" id="ekle_butonu">
+              Ekle
+            </button>     
+        </div>
+      </form>
+
+      <select
+        class="form-select"
+        id="satir_sayisi"
+        onchange="kisi_listesi_yazdir()"
+      >
+        <option value="-1">TÜMÜ</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
+
+      <div>
+        <button type="submit" class="arama_butonu" id="arama_btn">
+          <input type="text" name="arama_kts" class="arama_kts" id="arama" placeholder="Arama" />
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+      
+
+    <table id="tablo">
+      <thead>
+        <tr>
+          <th>SIRA</th>
+          <th>ID</th>
+          <th>İSİM</th>
+          <th>SOYİSİM</th>
+          <th>TELEFON</th>
+          <th>E-MAİL</th>
+          <th>YAŞ</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="kisi_listesi">
+
+        <!-- <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>Sema</td>
+          <td>Ekmekci</td>
+          <td>123456789</td>
+          <td>ekmekci.semanur@gmail.com</td>
+          <td>19</td>
+          <td></td>
+        </tr> -->
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>SIRA</th>
+          <th>ID</th>
+          <th>İSİM</th>
+          <th>SOYİSİM</th>
+          <th>TELEFON</th>
+          <th>E-MAİL</th>
+          <th>YAŞ</th>
+          <th></th>
+        </tr>
+      </tfoot>
+    </table>
+
+    <script src="index.js"></script>
+  </body>
+</html>
