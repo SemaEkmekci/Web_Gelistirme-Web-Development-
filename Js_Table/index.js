@@ -84,17 +84,24 @@ function kisi_listesi_yazdir() {
 }
 kisi_listesi_yazdir();
 
-const searchInput = document.getElementById("arama");
-const rows = document.querySelectorAll("tbody tr");
-console.log(rows);
-searchInput.addEventListener("keyup", function (event) {
-  const q = event.target.value;
-  rows.forEach((row) => {
-    row.querySelector("td").textContent.startsWith(q)
-      ? (row.style.display = "table-row")
-      : (row.style.display = "none");
-  });
-});
+const arama_fonksiyonu = () => {
+  var searchInput = document.getElementById("arama").value.toUpperCase();
+  var tablo = document.getElementById("kisi_listesi");
+  var tr = tablo.getElementsByTagName("tr");
+
+  for (var i = 0; i < tr.length; i++) {
+    var td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      let text = td.textContent || td.innerHTML;
+      if (text.toUpperCase().indexOf(searchInput) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+};
+
 
 var guncel_tarih = new Date().getFullYear();
 var isim_input = document.getElementById("isim_bilgisi_ekle");
