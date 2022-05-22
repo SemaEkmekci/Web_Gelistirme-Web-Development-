@@ -21,7 +21,7 @@ function kisi_listesi_yazdir() {
     if (sira_sayaci <= deger) {
       var kisi_bilgisi = `
     <tr >
-        <th scope="row">${sayac}</th>
+        <th >${sayac}</th>
         <td>${i.id}</td>
         <td>${i.isim}</td>
         <td>${i.soyisim}</td>
@@ -53,7 +53,6 @@ function kisi_listesi_yazdir() {
 `;
 
       kisi.insertAdjacentHTML("beforeend", kisi_bilgisi);
-      sayac++;
 
       var buton_ekle = parseInt(kisi_verileri.length / deger);
       document.querySelector("tablo");
@@ -80,17 +79,19 @@ function kisi_listesi_yazdir() {
       }
       //   console.log(document.querySelector("#siralama"));
     }
+    sayac++;
   }
 }
 kisi_listesi_yazdir();
 
-const arama_fonksiyonu = () => {
+function arama_fonksiyonu() {
+  var aranan_kolon = document.querySelector("#aranan").value;
+  console.log(aranan_kolon);
   var searchInput = document.getElementById("arama").value.toUpperCase();
   var tablo = document.getElementById("kisi_listesi");
   var tr = tablo.getElementsByTagName("tr");
-
   for (var i = 0; i < tr.length; i++) {
-    var td = tr[i].getElementsByTagName("td")[1];
+    var td = tr[i].getElementsByTagName("td")[aranan_kolon];
     if (td) {
       let text = td.textContent || td.innerHTML;
       if (text.toUpperCase().indexOf(searchInput) > -1) {
@@ -100,8 +101,7 @@ const arama_fonksiyonu = () => {
       }
     }
   }
-};
-
+}
 
 var guncel_tarih = new Date().getFullYear();
 var isim_input = document.getElementById("isim_bilgisi_ekle");
