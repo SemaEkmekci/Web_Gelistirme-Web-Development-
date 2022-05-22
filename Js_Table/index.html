@@ -59,7 +59,22 @@
             </button>     
         </div>
       </form>
-
+      <div>
+        <select
+          class="form-select2"
+          id="aranan"
+          onchange="arama_fonksiyonu()"
+        >
+        <option selected disabled>Neye Göre Arama Yapmak İstersiniz?</option>
+          <option value="0">Id</option>
+          <option value="1">İsim</option>
+          <option value="2">Soyisim</option>
+          <option value="3">Telefon</option>
+          <option value="4">E-mail</option>
+          <option value="5">Yaş</option>
+        </select>
+      </div>
+      <div class="icon_icin">
       <select
         class="form-select"
         id="satir_sayisi"
@@ -73,7 +88,7 @@
         <option value="50">50</option>
       </select>
 
-      <div>
+   
         <button type="submit" class="arama_butonu" id="arama_btn">
           <input type="text"  class="arama_kts" id="arama" placeholder="Arama" onkeyup="arama_fonksiyonu()" />
           <i class="fa fa-search"></i>
