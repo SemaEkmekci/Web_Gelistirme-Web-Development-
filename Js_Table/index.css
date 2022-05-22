@@ -56,30 +56,50 @@ tr:nth-child(even) {
   border-radius: 10px;
   background-color: white;
   border: 3px solid rgb(114, 114, 114);
-  margin-top: 55px;
+  /* margin-top: 55px; */
   margin-bottom: 15px;
-  float: right;
+  float: left;
 }
 .arama_kts {
+  cursor: pointer;
   border: none;
   border-radius: 10px;
   height: 28px;
   width: 200px;
   outline: 0;
 }
+
+.form-select2 {
+  /* margin-top: 105px; */
+  width: 27%;
+  border-radius: 10px;
+  border: 3px solid #fff;
+  /* float: right; */
+  height: 35px;
+  margin-top: 60px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #4378ab;
+}
+
 .form-select {
   width: 10%;
   border-radius: 10px;
-  border: 3px solid rgb(114, 114, 114);
-  float: left;
+  cursor: pointer;
+  border: 3px solid #fff;
+  float: right;
   height: 35px;
   margin-bottom: 15px;
-  margin-top: 55px;
+  color: #fff;
+  background-color: #4378ab;
+
+  /* margin-top: 55px; */
 }
 option {
   text-align: center;
   font-size: 17px;
-  color: #5192cf;
+  /* color: #5192cf; */
 }
 .input-box {
   border-radius: 4px;
@@ -109,7 +129,7 @@ option {
   color: #fff;
   border-radius: 8px;
   float: right;
-
+  border-color: #c7daeb52;
   cursor: pointer;
 }
 @media screen and (max-width: 765px) {
