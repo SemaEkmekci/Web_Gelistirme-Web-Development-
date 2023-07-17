@@ -44,8 +44,7 @@ app.post("/signup",async(req,res)=>{
             name:uname,
             surname:usurname,
             password:upassword,
-            email:uemail,
-            password:upassword
+            email:uemail
         });
         res.send({status:"Tamam"})
     }catch(err){
